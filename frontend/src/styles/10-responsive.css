@@ -1,0 +1,40 @@
+@media (max-width: 1180px) {
+  .path-chip {
+    max-width: 210px;
+  }
+}
+
+@media (max-width: 860px) {
+  .topbar {
+    display: grid;
+  }
+
+  .brand,
+  .toolbar {
+    flex-wrap: wrap;
+  }
+
+  .metrics {
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+  }
+
+  .terminal-grid {
+    --cols: 1;
+    grid-template-columns: 1fr;
+  }
+
+  .console-view {
+    grid-template-columns: 1fr;
+  }
+
+  .plan-pane {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    max-height: 140px;
+  }
+
+  .settings-drawer {
+    width: 100%;
+    border-left: 0;
+  }
+}

@@ -1,0 +1,239 @@
+.plan-pane {
+  min-width: 0;
+  min-height: 0;
+  border-left: 1px solid var(--line);
+  background: var(--panel-2);
+  overflow: auto;
+  overscroll-behavior: auto;
+  scrollbar-gutter: stable;
+  touch-action: pan-y;
+}
+
+.terminal.plan-hidden .plan-pane {
+  display: none;
+}
+
+.plan-title {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  padding: 6px 7px;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+  background: var(--panel-2);
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.plan-pipeline {
+  display: grid;
+  gap: 6px;
+  padding: 7px;
+  color: #b8c1c4;
+}
+
+.plan-step {
+  display: grid;
+  grid-template-columns: 10px minmax(0, 1fr);
+  gap: 7px;
+  align-items: start;
+  min-width: 0;
+  line-height: 1.28;
+}
+
+.state-dot {
+  width: 9px;
+  height: 9px;
+  margin-top: 3px;
+  border: 1px solid currentColor;
+  background: transparent;
+}
+
+.step-text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.plan-step.complete {
+  color: var(--green);
+}
+
+.plan-step.in_progress {
+  color: var(--amber);
+}
+
+.plan-step.error {
+  color: var(--red);
+}
+
+.plan-step.pending,
+.plan-step.idle {
+  color: #aeb7ba;
+}
+
+.plan-step.complete .state-dot,
+.plan-step.in_progress .state-dot,
+.plan-step.error .state-dot {
+  background: currentColor;
+}
+
+.terminal-form {
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 34px 64px;
+  gap: 1px;
+  border-top: 1px solid var(--line);
+  background: var(--line);
+}
+
+/* While the agent runs, a fourth column holds the stop button. */
+.terminal-form.has-stop {
+  grid-template-columns: minmax(0, 1fr) 34px 64px 64px;
+}
+
+.terminal-form .stop-btn {
+  color: var(--red);
+  cursor: pointer;
+}
+
+.terminal-form .stop-btn:hover:not(:disabled) {
+  background: color-mix(in srgb, var(--red) 18%, #0b0e10);
+}
+
+.terminal-form .stop-btn:disabled {
+  color: var(--muted);
+  cursor: default;
+}
+
+.attach-input {
+  display: none;
+}
+
+.attach-btn {
+  color: var(--muted);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.attach-btn:hover {
+  color: var(--text);
+}
+
+.terminal-form textarea {
+  min-height: 40px;
+  max-height: 78px;
+  border: 0;
+  background: #080a0b;
+}
+
+.terminal-form button {
+  height: auto;
+  border: 0;
+  background: #0b0e10;
+}
+
+.paste-tray {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: 1px;
+  background: var(--line);
+}
+
+.paste-chip {
+  min-width: 0;
+  display: grid;
+  grid-template-columns: 32px minmax(0, 1fr) 28px;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 7px;
+  background: #080a0b;
+  border-left: 2px solid var(--cyan);
+}
+
+.paste-icon {
+  display: grid;
+  place-items: center;
+  width: 26px;
+  height: 26px;
+  border: 1px solid var(--line-strong);
+  color: var(--cyan);
+}
+
+.paste-meta {
+  min-width: 0;
+  display: grid;
+  gap: 2px;
+}
+
+.paste-meta strong,
+.paste-meta em {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.paste-meta strong {
+  color: var(--text);
+}
+
+.paste-meta em {
+  color: var(--muted);
+  font-style: normal;
+}
+
+.paste-chip button {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  color: var(--muted);
+  background: #0b0e10;
+}
+
+
+.terminal-form {
+  position: relative;
+}
+
+.slash-menu {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  left: 8px;
+  right: 8px;
+  z-index: 30;
+  background: var(--panel, #0d1117);
+  border: 1px solid var(--line, #2b3440);
+  border-radius: 6px;
+  padding: 4px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.slash-menu button {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  background: none;
+  border: 0;
+  color: inherit;
+  padding: 6px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+  font: inherit;
+}
+
+.slash-menu button:hover {
+  background: rgba(113, 216, 138, 0.12);
+}
+
+.slash-menu code {
+  color: var(--accent, #71d88a);
+}
+
+.slash-menu span {
+  opacity: 0.65;
+  font-size: 0.85em;
+}

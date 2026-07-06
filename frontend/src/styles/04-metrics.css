@@ -1,0 +1,42 @@
+.metrics {
+  flex: 0 0 auto;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(120px, 1fr));
+  border-bottom: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.metric {
+  min-height: 44px;
+  padding: 6px 10px;
+  border-right: 1px solid var(--line);
+}
+
+.metric span {
+  display: block;
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.metric strong {
+  display: block;
+  margin-top: 4px;
+  font-size: 16px;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.meter {
+  height: 8px;
+  margin-top: 9px;
+  border: 1px solid var(--line);
+  background: #070909;
+}
+
+.meter > i {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--green);
+}
+

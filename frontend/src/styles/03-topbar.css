@@ -1,0 +1,104 @@
+.topbar {
+  flex: 0 0 auto;
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--line-strong);
+  background: #080a0b;
+}
+
+.brand,
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.toolbar {
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.connection-chip {
+  display: inline-flex;
+  align-items: center;
+  height: 26px;
+  padding: 0 8px;
+  border: 1px solid var(--line-strong);
+  color: var(--muted);
+  background: #080a0b;
+  text-transform: lowercase;
+}
+
+.connection-chip.retry {
+  color: var(--amber);
+  border-color: var(--amber);
+}
+
+.connection-chip.recovered {
+  color: var(--green);
+  border-color: var(--green);
+}
+
+.connection-chip.failed {
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.neo-logo {
+  flex: 0 0 auto;
+  display: block;
+  width: 56px;
+  height: 34px;
+  overflow: visible;
+  filter: drop-shadow(0 0 7px #71d88a14);
+}
+
+.neo-logo-frame {
+  fill: #080d0e;
+  stroke: #26383f;
+  stroke-width: 1.2;
+}
+
+.neo-logo-monogram {
+  transform: skewX(5deg) translateX(-6px);
+  shape-rendering: geometricPrecision;
+}
+
+.neo-logo-n-left,
+.neo-logo-n-slash,
+.neo-logo-shared,
+.neo-logo-h-bar,
+.neo-logo-h-end {
+  stroke: #d8ffff2b;
+  stroke-width: 0.55;
+  stroke-linejoin: bevel;
+}
+
+.neo-logo-n-left,
+.neo-logo-n-slash,
+.neo-logo-shared {
+  fill: url("#neo-logo-green");
+  filter: drop-shadow(0 0 4px #71d88a22);
+}
+
+.neo-logo-h-bar,
+.neo-logo-h-end {
+  fill: url("#neo-logo-cyan");
+  filter: drop-shadow(0 0 4px #6fc7d822);
+}
+
+.path-chip {
+  max-width: 280px;
+  height: 28px;
+  padding: 0 8px;
+  color: var(--cyan);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+

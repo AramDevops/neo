@@ -1,0 +1,17 @@
+:root {
+  --bg: #090b0c;
+  --panel: #0f1214;
+  --panel-2: #12171a;
+  --line: #30383d;
+  --line-strong: #58646b;
+  --text: #d8dedf;
+  --muted: #879196;
+  --green: #71d88a;
+  --amber: #e0bd64;
+  --red: #e07171;
+  --cyan: #6fc7d8;
+  --cols: 2;
+  --terminal-row-height: 500px;
+  color-scheme: dark;
+}
+

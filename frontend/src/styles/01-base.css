@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  overscroll-behavior: none;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 13px;
+  letter-spacing: 0;
+  overflow: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+  color: var(--text);
+  background: #080a0b;
+  border: 1px solid var(--line);
+  border-radius: 0;
+}
+
+button {
+  height: 32px;
+  padding: 0 12px;
+  cursor: pointer;
+  text-transform: lowercase;
+}
+
+button:hover {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+button.mode-active {
+  border-color: var(--green);
+  color: var(--green);
+}
+
+button.danger-btn {
+  border-color: #4a2f34;
+  color: #d8a4a4;
+}
+
+button.danger-btn:hover:not(:disabled) {
+  border-color: var(--red);
+  color: var(--red);
+}
+
+button:focus,
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 1px solid var(--green);
+  outline-offset: -1px;
+}
+
+button:disabled {
+  color: var(--muted);
+  border-color: #20272b;
+  cursor: wait;
+}
+
+input,
+select {
+  height: 32px;
+  padding: 0 8px;
+}
+
+textarea {
+  width: 100%;
+  min-height: 70px;
+  padding: 8px;
+  resize: vertical;
+}
+
+
+.muted {
+  color: var(--muted);
+}
+
+.field {
+  display: grid;
+  gap: 2px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+
+.terminal-grid,
+.transcript,
+.plan-pane,
+.context-list,
+.run-list,
+.tool-list,
+.trace-view,
+.settings-page,
+.settings-drawer {
+  scrollbar-width: thin;
+  scrollbar-color: #687176 #101416;
+}

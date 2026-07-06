@@ -1,0 +1,170 @@
+.markdown-body {
+  display: inline;
+}
+
+.md-paragraph,
+.md-heading,
+.md-list,
+.md-codeblock {
+  display: block;
+  text-indent: 0;
+}
+
+.md-paragraph {
+  margin: 0 0 6px;
+}
+
+.markdown-body > .md-paragraph:first-child {
+  display: inline;
+}
+
+.md-paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.md-paragraph-line {
+  display: inline;
+}
+
+.md-gap {
+  display: block;
+  height: 7px;
+}
+
+.md-heading {
+  margin: 8px 0 5px;
+  color: var(--green);
+  font-weight: 700;
+}
+
+.md-heading.level-1 {
+  font-size: 15px;
+}
+
+.md-heading.level-2,
+.md-heading.level-3,
+.md-heading.level-4 {
+  font-size: 13px;
+}
+
+.md-list {
+  margin: 4px 0 7px;
+}
+
+.md-list-item {
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr);
+  gap: 4px;
+  margin: 2px 0;
+  text-indent: 0;
+}
+
+.md-bullet {
+  color: var(--amber);
+  text-align: right;
+}
+
+.md-list-text {
+  min-width: 0;
+}
+
+.md-strong {
+  color: #edf5f5;
+  font-weight: 700;
+}
+
+.md-code {
+  padding: 0 3px;
+  border: 1px solid #263035;
+  background: #070909;
+  color: var(--cyan);
+}
+
+.md-link {
+  color: var(--cyan);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.md-codeblock {
+  margin: 6px 0 8px;
+  border-left: 2px solid var(--cyan);
+  background: #070909;
+  overflow: auto;
+  scrollbar-width: thin;
+}
+
+.md-codeblock-lang {
+  display: block;
+  padding: 4px 7px;
+  border-bottom: 1px solid #20272b;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.md-codeblock code {
+  display: block;
+  min-width: max-content;
+  padding: 7px;
+  white-space: pre;
+  color: #dce5e7;
+}
+
+.source-list {
+  display: grid;
+  gap: 6px;
+  margin-top: 8px;
+  margin-left: 18px;
+}
+
+.source-link {
+  display: grid;
+  grid-template-columns: 20px minmax(0, 1fr);
+  gap: 7px;
+  align-items: center;
+  min-width: 0;
+  padding: 6px;
+  border: 1px solid #243038;
+  background: #080a0b;
+  color: var(--text);
+  text-decoration: none;
+  text-indent: 0;
+}
+
+.source-link:hover {
+  border-color: var(--cyan);
+}
+
+.source-icon {
+  width: 16px;
+  height: 16px;
+  image-rendering: auto;
+}
+
+.source-icon.fallback {
+  display: inline-grid;
+  place-items: center;
+  color: var(--cyan);
+}
+
+.source-meta {
+  display: grid;
+  min-width: 0;
+  gap: 2px;
+}
+
+.source-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: #dce5e7;
+}
+
+.source-domain {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: var(--cyan);
+  font-size: 11px;
+}
+

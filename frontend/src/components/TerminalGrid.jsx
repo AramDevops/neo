@@ -1,0 +1,100 @@
+import { TerminalCard } from "./TerminalCard.jsx";
+
+export function TerminalGrid({
+  gridRef,
+  visibleAgents,
+  cols,
+  rowHeight,
+  accents,
+  hiddenPlans,
+  updateHiddenPlans,
+  clearAgentChat,
+  clearingAgents,
+  deleteAgent,
+  deletingAgents,
+  stopAgent,
+  stoppingAgents,
+  terminalItems,
+  toolStats,
+  normalizeAgentText,
+  shouldAnimateMessage,
+  finishMessageAnimation,
+  syncTranscripts,
+  transcriptRefs,
+  handleTranscriptScroll,
+  containScrollWheel,
+  transcriptNeedsLatest,
+  jumpTranscriptToLatest,
+  plans,
+  planState,
+  pasteAttachments,
+  removePasteAttachment,
+  drafts,
+  setDrafts,
+  handleTerminalKeyDown,
+  handleTerminalPaste,
+  handleTerminalDragOver,
+  handleTerminalDragLeave,
+  handleTerminalDrop,
+  attachFiles,
+  dropTargets,
+  sendMessage,
+  expandedActivities,
+  toggleActivity,
+  openVscode,
+  screenshotCount,
+  openGallery,
+  openScreenshot
+}) {
+  return (
+    <section ref={gridRef} className="terminal-grid" style={{ "--cols": cols, "--terminal-row-height": `${rowHeight}px` }}>
+      {visibleAgents.length === 0 && <div className="empty-grid">no visible terminals</div>}
+      {visibleAgents.map((agent, index) => (
+        <TerminalCard
+          agent={agent}
+          accent={accents[index % accents.length]}
+          hiddenPlan={Boolean(hiddenPlans[agent.id])}
+          togglePlan={updateHiddenPlans}
+          clearAgent={clearAgentChat}
+          clearingAgent={clearingAgents[agent.id]}
+          deleteAgent={deleteAgent}
+          deletingAgent={deletingAgents[agent.id]}
+          stopAgent={stopAgent}
+          stoppingAgent={Boolean(stoppingAgents[agent.id])}
+          items={terminalItems(agent.id)}
+          toolStats={toolStats(agent.id)}
+          normalizeAgentText={normalizeAgentText}
+          shouldAnimateMessage={shouldAnimateMessage}
+          finishMessageAnimation={finishMessageAnimation}
+          syncTranscripts={syncTranscripts}
+          transcriptRefs={transcriptRefs}
+          handleTranscriptScroll={handleTranscriptScroll}
+          containScrollWheel={containScrollWheel}
+          transcriptNeedsLatest={transcriptNeedsLatest[agent.id]}
+          jumpTranscriptToLatest={jumpTranscriptToLatest}
+          plans={plans}
+          planState={planState}
+          pasteAttachments={pasteAttachments}
+          removePasteAttachment={removePasteAttachment}
+          drafts={drafts}
+          setDrafts={setDrafts}
+          handleTerminalKeyDown={handleTerminalKeyDown}
+          handleTerminalPaste={handleTerminalPaste}
+          handleTerminalDragOver={handleTerminalDragOver}
+          handleTerminalDragLeave={handleTerminalDragLeave}
+          handleTerminalDrop={handleTerminalDrop}
+          attachFiles={attachFiles}
+          dropTarget={Boolean(dropTargets[agent.id])}
+          sendMessage={sendMessage}
+          expandedActivities={expandedActivities}
+          toggleActivity={toggleActivity}
+          openVscode={openVscode}
+          screenshotCount={screenshotCount(agent.id)}
+          openGallery={openGallery}
+          openScreenshot={openScreenshot}
+          key={agent.id}
+        />
+      ))}
+    </section>
+  );
+}

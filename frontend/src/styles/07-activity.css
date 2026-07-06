@@ -1,0 +1,189 @@
+.tool-entry {
+  border-left: 2px solid var(--amber);
+  background: #0a0d0e;
+  padding: 6px 8px;
+  color: #cdd4d6;
+  margin: 0 0 8px;
+}
+
+.tool-entry.failed {
+  border-left-color: var(--red);
+}
+
+.tool-entry.thinking {
+  border-left-color: var(--cyan);
+}
+
+.tool-entry.thinking .tool-head {
+  color: var(--cyan);
+}
+
+.tool-head-wrap {
+  display: grid;
+  gap: 5px;
+}
+
+.tool-head {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--amber);
+  font: inherit;
+  text-align: left;
+  min-width: 0;
+  cursor: pointer;
+  list-style: none;
+}
+
+.tool-head:focus,
+.tool-head:focus-visible {
+  outline: 0;
+}
+
+.tool-head:focus-visible strong {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.tool-head::-webkit-details-marker {
+  display: none;
+}
+
+.tool-head::before {
+  content: "+";
+  color: var(--muted);
+}
+
+.tool-entry.open .tool-head,
+.tool-entry[open] .tool-head {
+  margin-bottom: 5px;
+}
+
+.tool-entry.open .tool-head::before,
+.tool-entry[open] .tool-head::before {
+  content: "-";
+}
+
+.tool-entry:not(.open):not([open]) .tool-body,
+.tool-entry:not(.open):not([open]) > .tool-args,
+.tool-entry:not(.open):not([open]) > .tool-output {
+  display: none;
+}
+
+.tool-head strong {
+  color: var(--text);
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.tool-head em {
+  color: var(--muted);
+  font-style: normal;
+  margin-left: auto;
+}
+
+.tool-change {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  padding-left: 16px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.tool-file-link,
+.tool-review {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  color: var(--cyan);
+  font: inherit;
+  cursor: pointer;
+}
+
+.tool-file-link {
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tool-file-link:hover,
+.tool-review:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.diff-add {
+  color: var(--green);
+}
+
+.diff-del {
+  color: var(--red);
+}
+
+.tool-shot {
+  display: block;
+  margin: 2px 0 2px 16px;
+  padding: 0;
+  border: 1px solid #20272b;
+  background: #070909;
+  cursor: zoom-in;
+  max-width: min(320px, calc(100% - 16px));
+}
+
+.tool-shot img {
+  display: block;
+  width: 100%;
+  max-height: 200px;
+  object-fit: contain;
+}
+
+.tool-shot:hover,
+.tool-shot:focus-visible {
+  border-color: var(--line-strong);
+  outline: 0;
+}
+
+.tool-body {
+  display: grid;
+  gap: 5px;
+}
+
+.tool-args,
+.tool-output {
+  margin: 0;
+  padding: 6px;
+  max-height: 180px;
+  overflow: auto;
+  overscroll-behavior: auto;
+  scrollbar-gutter: stable;
+  touch-action: pan-y;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  background: #070909;
+  border: 1px solid #20272b;
+}
+
+.tool-args {
+  margin-bottom: 5px;
+  color: var(--muted);
+}
+
+.cursor {
+  display: inline-block;
+  color: var(--green);
+  animation: blink 0.8s steps(1, end) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
